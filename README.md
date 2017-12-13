@@ -36,3 +36,42 @@ df.rename(columns = {'a':'b'}, inplace = True)
 
 ## Other
 
+### 1. Use R in Jupyter Notebook
+Install some R packages in R console first.
+```R
+install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'))
+devtools::install_github('IRkernel/IRkernel')
+IRkernel::installspec()
+### if you want to install other R packages 
+### make sure to add the new package to the anaconda R library path
+##install.packages("newpackage", "/home/user/anaconda3/lib/R/library")
+```
+
+Use conda to install some necessary R packages in your Python env.
+```
+### if you want to run R in Jupyter Notebook
+conda install -c r r-essentials
+### if you want to run both R and Python in the same notebook
+conda install -c r rpy2
+```
+
+Run both R and Python code in the same notebook. Note that the Python code and R code need to be in separated cells.
+```python
+%load_ext rpy2.ipython
+```
+```python
+%R require(ggplot2)
+```
+```python
+import pandas as pd 
+# Make a pandas DataFrame
+df = pd.DataFrame({'Alphabet': ['a', 'b', 'c', 'd','e', 'f', 'g', 'h','i'],
+                   'A': [4, 3, 5, 2, 1, 7, 7, 5, 9],
+                   'B': [0, 4, 3, 6, 7, 10,11, 9, 13],
+                   'C': [1, 2, 3, 1, 2, 3, 1, 2, 3]})
+```
+```python
+%%R -i df
+# Plot the DataFrame df
+ggplot(data=df) + geom_point(aes(x=A, y=B, color=C))
+```
