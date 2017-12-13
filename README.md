@@ -64,14 +64,12 @@ Run both R and Python code in the same notebook. Note that the Python code and R
 ```
 ```python
 import pandas as pd 
-# Make a pandas DataFrame
-df = pd.DataFrame({'Alphabet': ['a', 'b', 'c', 'd','e', 'f', 'g', 'h','i'],
-                   'A': [4, 3, 5, 2, 1, 7, 7, 5, 9],
-                   'B': [0, 4, 3, 6, 7, 10,11, 9, 13],
-                   'C': [1, 2, 3, 1, 2, 3, 1, 2, 3]})
+df = pd.DataFrame({'group': ['a', 'b', 'c', 'd','e', 'f', 'g', 'h','i'],
+                   'A': [1, 2, 5, 5, 1, 6, 7, 5, 9],
+                   'B': [0, 2, 3, 6, 7, 6, 5, 9, 13],
+                   'C': [3, 2, 3, 1, 3, 3, 4, 2, 1]})
 ```
 ```python
 %%R -i df
-# Plot the DataFrame df
 ggplot(data=df) + geom_point(aes(x=A, y=B, color=C))
 ```
