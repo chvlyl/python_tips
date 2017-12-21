@@ -7,7 +7,7 @@ A collection of python tips in my everyday coding
 
 ## Pandas
 
-#### 1. Pandas groupby excludes NA
+#### 1. groupby excludes NA
 
 ```python
 df = pd.DataFrame({'col1':[1,2,np.NaN,1,np.NaN,2],'col2':[0,0,1,2,2,2]})
@@ -20,7 +20,7 @@ It will exclude the NA in col1. We can fill the Nan with string "NA".
 df = pd.DataFrame({'col1':[1,2,np.NaN,1,np.NaN,2],'col2':[0,0,1,2,2,2]})
 df.fillna('NA').GroupBy(['col1']).size()
 ```
-#### 2. Pandas rename columns
+#### 2. rename columns
 
 We can rename the entire column names by 
 ```python
@@ -30,6 +30,14 @@ df.columns = ['a', 'b']
 Or we can rename specific columns by
 ```python
 df.rename(columns = {'a':'b'}, inplace = True)
+```
+
+#### select data by date
+Make sure the date variable is in datetime format
+```python
+df['date_var'] = pd.to_datetime(df['date_var'])  
+mask = (df['date_var'] >= '2006-01-01') & (df['date_var'] <= '2006-12-30')
+df.loc[mask]
 ```
 
 ## Keras
