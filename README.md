@@ -32,7 +32,7 @@ Or we can rename specific columns by
 df.rename(columns = {'a':'b'}, inplace = True)
 ```
 
-#### select data by date
+#### 3. select data by dates
 Make sure the date variable is in datetime format
 ```python
 df['date_var'] = pd.to_datetime(df['date_var'])  
