@@ -81,3 +81,21 @@ df = pd.DataFrame({'group': ['a', 'b', 'c', 'd','e', 'f', 'g', 'h','i'],
 %%R -i df
 ggplot(data=df) + geom_point(aes(x=A, y=B, color=C))
 ```
+
+I found that there are also magic functions can run R code within notebook. Check [this link](https://blog.dominodatalab.com/lesser-known-ways-of-using-notebooks/)
+
+### 2. Profile code
+I found that the %prun and %lprun functions in the Jupyter notebook are quite usefel to profile the code and make it more efficient. First, install the follow package
+```python
+pip install line-profiler
+```
+Then, in the notebook, load the package
+```python
+import line_profiler
+```
+Assume we want to profile the function called function_to_be_profile
+```python
+%lprun -f function_to_be_profile function_to_be_profile(para)
+```
+The above code will generate a line-by-line profiling result. You can find which part of your code is the bottleneck.
+
