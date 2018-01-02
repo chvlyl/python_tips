@@ -92,6 +92,7 @@ pip install line-profiler
 Then, in the notebook, load the package
 ```python
 import line_profiler
+%load_ext line_profiler
 ```
 Assume we want to profile the function called function_to_be_profile
 ```python
