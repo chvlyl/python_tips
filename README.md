@@ -3,6 +3,20 @@ A collection of python tips in my everyday coding
 
 ## Python
 
+#### 1. parallel computing
+I found that the joblib package is very good for a loop version of multiprocessing computing. For example, the following code is a simple for loop.
+```python
+from math import sqrt
+[sqrt(i ** 2) for i in range(10)]
+```
+With joblib, we can do it in a multiprocess fashion.
+```python
+from math import sqrt
+from joblib import Parallel, delayed
+Parallel(n_jobs=2)(delayed(sqrt)(i ** 2) for i in range(10))
+```
+Just wrap the function name in the delayed function as delayed(function_name). The returned values will be a list and each element is the output of each loop iteration. For more complicated usage, check [here](https://pythonhosted.org/joblib/parallel.html)
+
 ## Numpy
 
 ## Pandas
