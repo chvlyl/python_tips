@@ -19,6 +19,19 @@ Just wrap the function name in the delayed function as delayed(function_name). T
 
 ## Numpy
 
+#### 1. Save numpy array
+
+```python
+### without compression
+np.save(file_name,array_name)
+### with compression
+np.savez_compressed(file_name, array_name1=array1, array_name2=array2)
+### load saved array
+np.load(file_name)
+```
+
+
+
 ## Pandas
 
 #### 1. groupby excludes NA
