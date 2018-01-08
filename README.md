@@ -69,6 +69,13 @@ df.loc[mask]
 
 ## Keras
 
+#### 1\. Check GPU 
+Sometimes, we want to know if the GPU has been recognized. The following code assume Tensorflow as the backend.
+```python
+from tensorflow.python.client import device_lib
+print(device_lib.list_local_devices())
+```
+
 ## Other
 
 ### 1. Use R in Jupyter Notebook
