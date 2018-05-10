@@ -17,6 +17,18 @@ Parallel(n_jobs=2)(delayed(sqrt)(i ** 2) for i in range(10))
 ```
 Just wrap the function name in the delayed function as delayed(function_name). The returned values will be a list and each element is the output of each loop iteration. For more complicated usage, check [here](https://pythonhosted.org/joblib/parallel.html)
 
+#### 2. use pickle to save data
+Pickle can be used to save any kind of data.
+```python
+import pickle
+
+with open('train_test_id.pickle', 'wb') as f:
+    pickle.dump(train_test_id, f) 
+    
+with open('train_test_id.pickle', 'rb') as f: 
+    train_test_id = pickle.load(f) 
+```
+
 ## Numpy
 
 #### 1. Save numpy array
