@@ -114,6 +114,20 @@ plt.legend(['train', 'test'], loc='upper left')
 plt.show()
 ```
 
+#### 3\. Preprocess images for pre-trained models
+When use the pre-trained models in Keras, the images need to be preprocessed differently. Keras provides different preprocess functions for different pre-trained models. Just load the preprocess_input function from the pre-trained model that you want to use. For example, for inception_v3
+```python
+from keras.applications.inception_v3 import InceptionV3,preprocess_input
+x = preprocess_input(x)
+```
+For VGG16, load the preprocess_input from keras.applications.vgg16 instead
+```python
+from keras.applications.vgg16 import VGG16,preprocess_input
+x = preprocess_input(x)
+```
+
+
+
 ## Other
 
 ### 1. Use R in Jupyter Notebook
