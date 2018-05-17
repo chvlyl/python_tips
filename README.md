@@ -126,6 +126,8 @@ from keras.applications.vgg16 import VGG16,preprocess_input
 x = preprocess_input(x)
 ```
 
+The keras pre-trained models can be found [here](https://keras.io/applications/)
+
 
 
 ## Other
