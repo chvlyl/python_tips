@@ -87,6 +87,32 @@ Sometimes, we want to know if the GPU has been recognized. The following code as
 from tensorflow.python.client import device_lib
 print(device_lib.list_local_devices())
 ```
+#### 2\. Plot the fitting curve
+```python
+## save the fitting history
+history = model.fit(...)
+
+## list all variables in history
+print(history.history.keys())
+
+## plot accuracy
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+## plot loss
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+```
 
 ## Other
 
