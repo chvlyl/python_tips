@@ -188,3 +188,7 @@ Assume we want to profile the function called function_to_be_profile
 ```
 The above code will generate a line-by-line profiling result. You can find which part of your code is the bottleneck.
 
+### 3. Create env
+```
+conda create -n env_name python=3.6
+```
