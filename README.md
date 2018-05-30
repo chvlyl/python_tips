@@ -192,3 +192,9 @@ The above code will generate a line-by-line profiling result. You can find which
 ```
 conda create -n env_name python=3.6
 ```
+
+### 4. Use SSH tunneling for Jupyter Notebook
+```
+ssh -f -N -L 1234:localhost:8788 user@server.com
+```
+1234 is the local port and 8788 is the remote port used by Jupyter Notebook. Now you can connect to Jupyter Notebook by `localhost:1234` in the local browser
