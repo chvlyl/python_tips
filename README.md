@@ -129,6 +129,31 @@ x = preprocess_input(x)
 The keras pre-trained models can be found [here](https://keras.io/applications/)
 
 
+## Pytorch
+
+### 1. Use multiple GPUs
+```python
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model = ... # define your model here
+if torch.cuda.device_count() > 1:
+    print('--'*10)
+    print("Use", torch.cuda.device_count(), "GPUs")
+    print('--' * 10)
+    model = nn.DataParallel(model)
+model.to(device)
+```
+
+### 2. Define the Dataset for dataloader
+```python
+class ImageDataset(Dataset):
+    def __init__(self, some_parameters):
+        super(ImageDataset, self).__init__()     
+
+    def __len__(self):
+        return len_of_the_dataset
+
+    def __getitem__(self, index):   
+```
 
 ## Other
 
