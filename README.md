@@ -157,9 +157,9 @@ class ImageDataset(Dataset):
 
 
 ### 3. Change channel order
-Pytorch uses BCWH (batch, channel, width, height) instead of BWHC, which is different from Tensorflow and Keras. Use the permute function to change channel first to channel last.
+Pytorch uses BCWH (batch, channel, width, height) instead of BWHC, which is different from Tensorflow and Keras. Use the permute function to change the channel last order to channel first order.
 ```python
-imgage.permute(0, 3, 1, 2)
+image.permute(0, 3, 1, 2)
 ```
 
 ## Other
