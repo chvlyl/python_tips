@@ -162,6 +162,12 @@ Pytorch uses BCWH (batch, channel, width, height) instead of BWHC, which is diff
 image.permute(0, 3, 1, 2)
 ```
 
+### 4. Save and load Pytorch model
+```
+torch.save(model, 'model.pt')
+model = torch.load('model.pt')
+```
+
 ## Other
 
 ### 1. Use R in Jupyter Notebook
