@@ -29,6 +29,14 @@ with open('train_test_id.pickle', 'rb') as f:
     train_test_id = pickle.load(f) 
 ```
 
+#### 3. Use h5py to save data
+```python
+import h5py
+hdf5_file = h5py.File('test.h5', 'w')
+hdf5_file.create_dataset('some_keys', data=some_numpy_array, dtype=np.uint8)
+hdf5_file.close()
+```
+
 ## Numpy
 
 #### 1. Save numpy array
