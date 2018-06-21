@@ -171,10 +171,40 @@ image.permute(0, 3, 1, 2)
 ```
 
 ### 4. Save and load Pytorch model
-```
+The following code will load and save the whole model
+```python
 torch.save(model, 'model.pt')
 model = torch.load('model.pt')
 ```
+The following code will only load and save the weights
+```python
+torch.save(model.state_dict(), file_path)
+model.load_state_dict(torch.load(file_path))
+```
+
+### 5. Use tensorboard with Pytorch
+Use [tensorboard-pytorch](https://github.com/lanpa/tensorboard-pytorch), first install tensorboardX
+```
+pip install tensorboardX
+```
+You may also need to install tensorflow and tensorboard. In the Pytorch code
+```python
+import torch
+from tensorboardX import SummaryWriter
+writer = SummaryWriter()
+for iter in range(100):
+    ## train your model
+    saved_images = torchvision.utils.make_grid(train_image, nrow=6)
+    writer.add_image('Image', saved_images, iter)
+writer.off()
+```
+Here is [an exmaple](https://github.com/lanpa/tensorboard-pytorch) of other outputs you can visualize with tensorboard. The outputs will be written into the runs folder.
+
+Then launch the tensorboard 
+```
+tensorboard --logdir runs
+```
+Go to localhost:6006
 
 ## Other
 
