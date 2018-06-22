@@ -199,6 +199,10 @@ for iter in range(100):
     ## be carefull, not feed the Pytorch tensor
     writer.add_scalar('loss', loss, iter)
     writer.add_scalar('acc', acc, iter)
+    ## if you want to show train and test loss in the same figure
+    writer.add_scalars('loss', {'train': train_loss,
+                                'test': test_loss),
+                                }, iter)
     ## check the learned weights
     for name, param in model.named_parameters():
         writer.add_histogram(name, param.clone().cpu().data.numpy(), iter)
