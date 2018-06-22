@@ -196,6 +196,11 @@ for iter in range(100):
     ## train your model
     saved_images = torchvision.utils.make_grid(train_image, nrow=6)
     writer.add_image('Image', saved_images, iter)
+    ## be carefull, not feed the Pytorch tensor
+    writer.add_scalar('loss', loss, iter)
+    writer.add_scalar('acc', acc, iter)
+    ## check the learned weights
+    writer.add_histogram('hist', numpy_array, iter)
 writer.off()
 ```
 Here is [an exmaple](https://github.com/lanpa/tensorboard-pytorch) of other outputs you can visualize with tensorboard. The outputs will be written into the runs folder.
