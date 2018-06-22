@@ -200,7 +200,8 @@ for iter in range(100):
     writer.add_scalar('loss', loss, iter)
     writer.add_scalar('acc', acc, iter)
     ## check the learned weights
-    writer.add_histogram('hist', numpy_array, iter)
+    for name, param in model.named_parameters():
+        writer.add_histogram(name, param.clone().cpu().data.numpy(), iter)
 writer.off()
 ```
 Here is [an exmaple](https://github.com/lanpa/tensorboard-pytorch) of other outputs you can visualize with tensorboard. The outputs will be written into the runs folder.
