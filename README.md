@@ -216,6 +216,19 @@ tensorboard --logdir runs
 ```
 Go to localhost:6006
 
+
+### 6. Change learning rate during training
+```python
+from torch.optim.lr_scheduler import ReduceLROnPlateau
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9)
+scheduler = ReduceLROnPlateau(optim, 'min', factor=0.2, patience=5, verbose=True)
+for epoch in range(10):
+    ## train your model
+    ## calclulate val_loss
+    scheduler.step(val_loss)
+```
+Check [this page](https://pytorch.org/docs/stable/optim.html) for details
+
 ## Other
 
 ### 1. Use R in Jupyter Notebook
