@@ -229,6 +229,12 @@ for epoch in range(10):
 ```
 Check [this page](https://pytorch.org/docs/stable/optim.html) for details
 
+### 7. Print model details (layer name, number of parameters, trainable)
+```python
+for name, para in model.named_parameters():
+    print(name, para.numel(), para.requires_grad)
+```
+
 ## Other
 
 ### 1. Use R in Jupyter Notebook
