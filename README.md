@@ -86,6 +86,16 @@ df['date_var'] = pd.to_datetime(df['date_var'])
 mask = (df['date_var'] >= '2006-01-01') & (df['date_var'] <= '2006-12-30')
 df.loc[mask]
 ```
+#### 4. show all columns
+Change the pandas settings to show all columns.
+```
+import pandas as pd
+pd.set_option('display.max_columns', 100)
+pd.set_option('display.width', 500)
+
+pd.set_option('display.max_rows', 100)
+pd.set_option('display.height', 500)
+```
 
 ## Keras
 
