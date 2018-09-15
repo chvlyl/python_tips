@@ -343,3 +343,9 @@ conda create -n env_name python=3.6
 ssh -f -N -L 1234:localhost:8788 user@server.com
 ```
 1234 is the local port and 8788 is the remote port used by Jupyter Notebook. Now you can connect to Jupyter Notebook by `localhost:1234` in the local browser
+
+
+### 5. Add SSH public keys to the remote server
+```
+ssh-copy-id -i ~/.ssh/id_rsa user@remote_host
+```
