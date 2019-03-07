@@ -292,7 +292,7 @@ import tensorflow as tf
 
 class EvalUtilTest(tf.test.TestCase):
 
-  def some_test_function(self):
+  def test_function(self):
     some_code_here
     
 if __name__ == '__main__':
