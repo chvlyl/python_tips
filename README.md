@@ -287,6 +287,17 @@ def densenet121(pretrained=False, **kwargs):
 ## Tensorflow
 
 ### 1. Unit test in tensorflow
+```python
+import tensorflow as tf
+
+class EvalUtilTest(tf.test.TestCase):
+
+  def some_test_function(self):
+    some_code_here
+    
+if __name__ == '__main__':
+  tf.test.main()
+```
 
 ## Other
 
