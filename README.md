@@ -46,6 +46,13 @@ hdf5_file.create_dataset('some_keys', data=some_numpy_array, dtype=np.uint8)
 hdf5_file.close()
 ```
 
+#### 4. Choose conda env in Jupyter Notebook
+Need to install the following package in conda
+```python
+conda install nb_conda
+```
+
+
 ## Numpy
 
 #### 1. Save numpy array
