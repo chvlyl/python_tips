@@ -321,6 +321,11 @@ tf.logging.set_verbosity(tf.logging.DEBUG)
 #tf.logging.set_verbosity(tf.logging.WARN)
 ```
 
+### 3. Use tensorboard in notebook
+```
+%load_ext tensorboard.notebook
+```
+
 ## Other
 
 ### 1. Use R in Jupyter Notebook
