@@ -52,6 +52,10 @@ Need to install the following package in conda
 conda install nb_conda
 ```
 
+#### 5. Python 2 and Python3 code compatibility
+```
+from __future__ import absolute_import, division, print_function
+```
 
 ## Numpy
 
