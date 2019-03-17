@@ -306,6 +306,17 @@ if __name__ == '__main__':
   tf.test.main()
 ```
 
+### 2. Set the verbosity level
+```python
+import tensorflow as tf
+
+tf.logging.set_verbosity(tf.logging.DEBUG)
+#tf.logging.set_verbosity(tf.logging.ERROR) 
+#tf.logging.set_verbosity(tf.logging.INFO)
+#tf.logging.set_verbosity(tf.logging.FATAL)
+#tf.logging.set_verbosity(tf.logging.WARN)
+```
+
 ## Other
 
 ### 1. Use R in Jupyter Notebook
