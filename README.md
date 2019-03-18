@@ -57,6 +57,23 @@ conda install nb_conda
 from __future__ import absolute_import, division, print_function
 ```
 
+#### 6. Plot numpy data in grid
+```python
+## assume numpy_data has dimension: W, H, C
+n_rows = 5
+n_cols = 5
+plt.figure(figsize=(n_cols*4, n_rows * 4))
+for row in range(n_rows):
+    for col in range(n_cols):
+        index = n_cols * row + col
+        if index >= numpy_data.shape[2]: break
+        plt.subplot(n_rows, n_cols, index + 1)
+        plt.imshow(numpy_data[:,:,index])
+        plt.axis('off')
+        plt.title('Fig %s' % (index + 1))
+plt.show()
+```
+
 ## Numpy
 
 #### 1. Save numpy array
