@@ -74,6 +74,14 @@ for row in range(n_rows):
 plt.show()
 ```
 
+#### 7. Shutdown Jupyter Notebook
+```python
+## first list the running notebook
+jupyter notebook list
+## then shutdown the jupyter notebook with the specific port
+jupyter notebook stop 8888
+```
+
 ## Numpy
 
 #### 1. Save numpy array
