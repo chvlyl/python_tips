@@ -351,6 +351,14 @@ tf.logging.set_verbosity(tf.logging.DEBUG)
 %load_ext tensorboard.notebook
 ```
 
+### 4. Install cuda and cudnn by conda
+```python
+## if you get the following error, try install cuda and cudnn
+## ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
+conda install cudatoolkit
+conda install cudnn
+```
+
 ## Other
 
 ### 1. Use R in Jupyter Notebook
