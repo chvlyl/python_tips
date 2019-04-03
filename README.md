@@ -433,3 +433,8 @@ ssh -f -N -L 1234:localhost:8788 user@server.com
 ```
 ssh-copy-id -i ~/.ssh/id_rsa user@remote_host
 ```
+
+### 6. Git add manually deleted files
+```
+git add -u .
+```
