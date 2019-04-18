@@ -82,6 +82,11 @@ jupyter notebook list
 jupyter notebook stop 8888
 ```
 
+#### 8. Install Jupyter Notebook extensions
+```python
+pip install jupyter_contrib_nbextensions
+```
+
 ## Numpy
 
 #### 1. Save numpy array
