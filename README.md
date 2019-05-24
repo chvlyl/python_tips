@@ -443,3 +443,8 @@ ssh-copy-id -i ~/.ssh/id_rsa user@remote_host
 ```
 git add -u .
 ```
+
+### 7. Reload bashrc without logging out
+```
+source ~/.bashrc
+```
