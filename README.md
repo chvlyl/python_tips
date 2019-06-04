@@ -448,3 +448,9 @@ git add -u .
 ```
 source ~/.bashrc
 ```
+
+### 8. unrar with wildcard
+Somehow the unrar does not support wildcard. The following solution works for me.
+```
+unrar x '*.rar' 
+```
