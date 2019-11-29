@@ -454,3 +454,13 @@ Somehow the unrar does not support wildcard. The following solution works for me
 ```
 unrar x '*.rar' 
 ```
+
+### 9. update nvidia driver
+```
+## it's better to remove the older drivers
+sudo apt-get purge nvidia*
+sudo add-apt-repository ppa:graphics-drivers
+sudo ubuntu-drivers autoinstall
+## change 340 to whatever version you want
+sudo apt install nvidia-340
+```
