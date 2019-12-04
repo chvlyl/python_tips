@@ -464,3 +464,8 @@ sudo ubuntu-drivers autoinstall
 ## change 340 to whatever version you want
 sudo apt install nvidia-340
 ```
+
+### 10. Verify Checksum
+```
+sha256sum -c SHA256
+```
