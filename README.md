@@ -378,6 +378,9 @@ docker container rm xxxxxxx
 ## remove all stopped containers
 docker container ls -a --filter status=exited --filter status=created
 docker container prune
+
+## remove a running container
+docker rm --force container_name
 ```
 
 ## Other
