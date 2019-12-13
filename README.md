@@ -8,7 +8,8 @@ A collection of python tips in my everyday coding
 4. [Keras](#keras)
 5. [Pytorch](#pytorch)
 6. [Tensorflow](#tensorflow)
-7. [Other](#other)
+7. [Docker](#docker)
+8. [Other](#other)
 
 ## Python
 
@@ -362,6 +363,21 @@ tf.logging.set_verbosity(tf.logging.DEBUG)
 ## ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 conda install cudatoolkit
 conda install cudnn
+```
+
+## Docker
+
+### 1. Remove unused containers
+```
+docker system prune
+
+## remove a specific container
+docker container ls -a
+docker container rm xxxxxxx
+
+## remove all stopped containers
+docker container ls -a --filter status=exited --filter status=created
+docker container prune
 ```
 
 ## Other
